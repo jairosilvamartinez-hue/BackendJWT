@@ -117,11 +117,11 @@ namespace LibraryService.WebAPI
 
 
 
-            using (var scope = app.ApplicationServices.CreateScope())
-            {
-                var db = scope.ServiceProvider.GetRequiredService<LibraryContext>();
-                db.Database.Migrate();
-            }
+            //using (var scope = app.ApplicationServices.CreateScope())
+            //{
+            //    var db = scope.ServiceProvider.GetRequiredService<LibraryContext>();
+            //    db.Database.Migrate();
+            //}
 
             app.UseRouting();
 
