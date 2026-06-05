@@ -64,10 +64,14 @@ namespace LibraryService.WebAPI
             services.AddAuthorization();
 
             // 5. Configurar CORS para el FE (Vite dev server)
-            services.AddCors(o => o.AddPolicy("Frontend", p => p
-                .WithOrigins("http://localhost:5173")
-                .AllowAnyHeader()
-                .AllowAnyMethod()));
+         services.AddCors(o => o.AddPolicy("Frontend", p => p
+    .WithOrigins(
+        "http://localhost:5173",
+        "https://agent-6a2210cc0900c073fd08d56b--frontendjwt.netlify.app"
+    )
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()));
 
 
             // Add support for Dependency Injection for internal services (BooksService and LibrariesService)
